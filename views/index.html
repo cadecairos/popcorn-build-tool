@@ -1,0 +1,61 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Popcorn.js Build Tool</title>
+    <meta name="description" content="A build tool for popcorn.js">
+    <meta name="author" content="Christopher De Cairos">
+    <link rel="stylesheet" type="text/css" href="/bower/bootstrap/dist/css/bootstrap.min.css" >
+  </head>
+  </body>
+    <div class="container">
+      <header>
+        <div class="page-header">
+          <h1 style="text-align:center;">
+            Popcorn.js Build Tool
+          </h1>
+        </div>
+      </header>
+      <div class="row">
+        <div class="col-md-8 lead">popcorn.js is included by default
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-unstyled">
+            {% for file in files %}
+              <li>
+                <label for="{{ file }}" class="checkbox">
+                  <input type="checkbox" value="{{ file }}" id="{{ file }}"/>{{ file }}
+                </label>
+              </li>
+            {% endfor %}
+            <li>
+              <label for="minify" class="checkbox">
+                <input type="checkbox" value="minify" id="minify"/>Minify
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="output" class="row">
+        <div class="col-md-12"><br/>
+          <div class="input-group">
+            <button type="button" class="btn btn-default">Get URL</button>
+            <input type="text" class="col-md-10"/>
+          </div><br/>
+          <h2>Preview:</h2><br/>
+          <textarea readonly="true" rows="20" class="col-md-12"></textarea>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/builder.js"></script>
+    <script type="text/javascript" src="/bower/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+    </script>
+  </body>
+</html>
