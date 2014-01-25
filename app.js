@@ -50,6 +50,7 @@ app.get( '/', function( req, res ) {
 
 app.get( '/build', builder.build );
 
-app.listen( env.get( 'PORT' ) || 5000, function() {
-  console.log( 'HTTP server started on (probably http://localhost:' + env.get( 'PORT' ) );
+var port = env.get( 'PORT' ) || 5000;
+app.listen( port, function() {
+  console.log( 'HTTP server started on (probably http://localhost:' + port );
 });
