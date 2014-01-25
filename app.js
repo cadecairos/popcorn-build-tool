@@ -36,7 +36,7 @@ app.use(function( req, res, next ) {
 
 app.use(function errorMiddleware( err, req, res, next ) {
   var error = {
-    message: json.stringify( err, null, 2 ),
+    message: JSON.stringify( err, null, 2 ),
     status: http.STATUS_CODES[err.status] ? err.status : 500
   };
   res.json( error.status, error );
