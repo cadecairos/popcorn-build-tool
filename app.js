@@ -9,14 +9,15 @@ var http = require( "http" ),
     path = require( 'path' ),
     nunjucksEnv = new nunjucks.Environment( new nunjucks.FileSystemLoader( path.join( __dirname + '/views' ) ), { autoescape: true } ),
     app = express(),
+    builder,
     env;
 
 habitat.load();
 env = new habitat();
-
-var builder = require( './lib/builder' )( env );
-
 nunjucksEnv.express( app );
+
+builder = require( './lib/builder' )( env );
+redisMiddleware = require( './lib/redis' )( env );
 
 app.use( express.compress() );
 app.use( express.logger( env.get( 'NODE_ENV' ) === 'production' ? '' : 'dev' ) );
@@ -48,7 +49,10 @@ app.get( '/', function( req, res ) {
   });
 });
 
-app.get( '/build', builder.build );
+app.get( '/build', function( req, res, next ) {
+  res.setHeader( 'Cache-Control', 'max-age=86400');
+  next();
+}, redisMiddleware, builder.build );
 
 var port = env.get( 'PORT' ) || 5000;
 app.listen( port, function() {

@@ -1,8 +1,8 @@
 {
-  "name": "JS-Builder",
-  "version": "0.3.0",
+  "name": "popcorn-build-tool",
+  "version": "0.1.0",
   "author": "Christopher De Cairos",
-  "description": "Dynamically builds and minifies JavaScript",
+  "description": "Dynamically builds and minifies popcorn.js",
   "contributors": [
     {
       "name": "Christopher De Cairos",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cadecairos/JS-Builder.git"
+    "url": "https://github.com/cadecairos/popcorn-build-tool.git"
   },
   "dependencies": {
     "bower": "1.2.8",
@@ -28,6 +28,7 @@
     "habitat": "1.1.0",
     "newrelic": "1.3.0",
     "nunjucks": "1.0.1",
+    "redis":"0.10.0",
     "uglify-js": "2.4.11"
   },
   "devDependencies": {

@@ -104,9 +104,6 @@ module.exports = {
   "timeline": {
     "path": "plugins/timeline/popcorn.timeline.js"
   },
-  "twitter": {
-    "path": "plugins/twitter/popcorn.twitter.js"
-  },
   "webpage": {
     "path": "plugins/webpage/popcorn.webpage.js"
   },
