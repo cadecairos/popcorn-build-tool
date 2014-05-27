@@ -45,7 +45,8 @@ app.use(function errorMiddleware( err, req, res, next ) {
 
 app.get( '/', function( req, res ) {
   res.render( 'index.html', {
-    files: builder.files
+    files: builder.files,
+    GA: env.get( "GA" )
   });
 });
 
