@@ -1,6 +1,7 @@
 {
   "name": "popcorn-build-tool",
   "dependencies": {
-    "bootstrap": "v3.0.3"
+    "bootstrap": "v3.0.3",
+    "jquery": "v2.1.1"
   }
 }
