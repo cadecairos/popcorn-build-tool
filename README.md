@@ -1,3 +1,5 @@
+# This is an improved fork of cadecairos/JS-Builder - customized specifically for popcorn-js 
+
 #JS Builder#
 
 JS Builder is a Node.js app that returns custom builds of JavaScript projects via HTTP GET Requests. It uses [Uglify-js](https://github.com/mishoo/UglifyJS2) to compress and minify code.
